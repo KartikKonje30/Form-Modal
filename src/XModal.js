@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./XModal.css";
 
-function XModal() {
+export default function XModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -106,5 +106,3 @@ function XModal() {
     </div>
   );
 }
-
-export default XModal;
