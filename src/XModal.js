@@ -25,17 +25,17 @@ function XModal() {
       return;
     }
     if (!email.includes('@')) {
-      setError('Invalid email. Please check your email address.');
+      alert('Invalid email. Please check your email address.');
       return;
     }
     if (!/^\d{10}$/.test(phone)) {
-      setError('Invalid phone number. Please enter a 10-digit phone number.');
+      alert('Invalid phone number. Please enter a 10-digit phone number.');
       return;
     }
     const currentDate = new Date();
     const inputDate = new Date(dob);
     if (inputDate > currentDate) {
-      setError('Invalid date of birth. Please enter a valid date.');
+      alert('Invalid date of birth. Please enter a valid date.');
       return;
     }
     // Process the form data
@@ -51,7 +51,7 @@ function XModal() {
     <div>
       <button className="open-button" onClick={handleOpenModal}>Open Form</button>
       {isOpen && (
-        <div className="modal-overlay" onClick={handleCloseModal}>
+        <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={handleCloseModal}>&times;</span>
             <h2>Modal Form</h2>
